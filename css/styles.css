@@ -41,7 +41,7 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 }
 #footer {
   background-color: #444;
-  color: #aaa;
+  color: #eee;
   font-size: 8pt;
   letter-spacing: 1px;
   padding: 25px 0;
@@ -176,7 +176,7 @@ nav h1 a {
   font-size: 11pt;
 }
 #restaurants-list li a {
-  background-color: orange;
+  background-color: #252831;
   border-bottom: 3px solid #eee;
   color: #fff;
   display: inline-block;
@@ -186,10 +186,10 @@ nav h1 a {
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  font-weight: 600;
 }
 #restaurants-list li a:hover {
   background-color: #3397db;
-  font-weight: 600;
 }
 
 /* ====================== Restaurant Details ====================== */
@@ -305,9 +305,26 @@ nav h1 a {
   display: inline-block;
   margin-left: 20px;
 }
-#restaurant-hours td {
+#restaurant-hours {
+  border-collapse: collapse;
+  text-align: left;
   color: #666;
 }
+
+#restaurant-hours tr,
+#restaurant-hours th,
+#restaurant-hours td {
+  border: thin solid #ddd;
+}
+#restaurant-hours th {
+  padding: 8px;
+  background-color: #333;
+  color: #fff;
+}
+#restaurant-hours td {
+  padding: 4px;
+}
+
 
 /* BREAKPOINTS */
 

@@ -32,6 +32,8 @@ fetchNeighborhoods = () => {
  */
 fillNeighborhoodsHTML = (neighborhoods = self.neighborhoods) => {
   const select = document.getElementById('neighborhoods-select');
+  // A11y for Neighborhoods
+  select.setAttribute('aria-label', 'Neighborhoods Lists');
   neighborhoods.forEach(neighborhood => {
     const option = document.createElement('option');
     option.innerHTML = neighborhood;
@@ -59,6 +61,8 @@ fetchCuisines = () => {
  */
 fillCuisinesHTML = (cuisines = self.cuisines) => {
   const select = document.getElementById('cuisines-select');
+  // A11y for Cuisines
+  select.setAttribute('aria-label', 'Cuisine Lists');
 
   cuisines.forEach(cuisine => {
     const option = document.createElement('option');
@@ -161,11 +165,17 @@ createRestaurantHTML = (restaurant) => {
   const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  image.alt = 'Restaurant Image';
   li.append(image);
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
+
+  // ARIA-Label for restaurant tile
+  li.setAttribute('aria-label', restaurant.name);
+
   li.append(name);
+
 
   const neighborhood = document.createElement('p');
   neighborhood.innerHTML = restaurant.neighborhood;
@@ -178,6 +188,11 @@ createRestaurantHTML = (restaurant) => {
   const more = document.createElement('a');
   more.innerHTML = 'View Details';
   more.href = DBHelper.urlForRestaurant(restaurant);
+
+  // ARIA-Label for restaurant 'view-details' button
+  more.setAttribute('aria-label', `View Details of ${restaurant.name}`);
+  more.setAttribute('role', 'button');
+
   li.append(more)
 
   return li
