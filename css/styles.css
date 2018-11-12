@@ -191,6 +191,10 @@ nav h1 a {
 #restaurants-list li a:hover {
   background-color: #3397db;
 }
+#restaurants-list li a:hover {
+  background-color: #3397db;
+  font-weight: 600;
+}
 
 /* ====================== Restaurant Details ====================== */
 .inside header {
@@ -324,7 +328,6 @@ nav h1 a {
 #restaurant-hours td {
   padding: 4px;
 }
-
 
 /* BREAKPOINTS */
 
