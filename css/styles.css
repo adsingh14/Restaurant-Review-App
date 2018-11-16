@@ -313,7 +313,7 @@ nav h1 a {
   border-collapse: collapse;
   text-align: left;
   color: #666;
-  width: 100%;
+  width: 90%;
 }
 
 #restaurant-hours tr,
@@ -351,6 +351,7 @@ nav h1 a {
   #restaurant-name {
     margin-top: 0;
   }
+  #restaurant-hours,
   #restaurant-img,
   #restaurant-cuisine,
   #reviews-list li {
