@@ -18,13 +18,13 @@
 
   <main id="maincontent">
     <section id="map-container">
-      <div id="map" aria-label="Map"></div>
+      <div id="map" role="navigation"></div>
     </section>
     <section>
-      <div class="filter-options">
+      <div class="filter-options" tabindex="0">
         <h2>Filter Results</h2>
-        <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()">
-          <option value="all">All Neighborhoods</option>
+        <select id="neighborhoods-select" name="neighborhoods" role="listbox" onchange="updateRestaurants()">
+          <option value="all" role="option">All Neighborhoods</option>
         </select>
         <select id="cuisines-select" name="cuisines" onchange="updateRestaurants()">
           <option value="all">All Cuisines</option>

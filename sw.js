@@ -1,15 +1,21 @@
 // Installing Service Worker
-var cacheName = 'amn-rest-v1';
-var cachedURLs = [
-  '/img/',
+const cacheName = 'amn-rest-v1';
+
+const cachedURLs = [
+  '/',
   '/css/styles.css',
   '/js/dbhelper.js',
   '/js/main.js',
   '/js/restaurant_info.js',
+  '/data/restaurants.json',
   '/index.html',
   '/restaurant.html',
+  ];
 
-];
+// Adding images path to cached memory
+for (let i = 1; i <= 10; i++) {
+  cachedURLs.push(`/img/${i}.jpg`);
+}
 
 self.addEventListener('install', function(event) {
   // Opening cache for selected URLs
