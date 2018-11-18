@@ -117,7 +117,7 @@ nav h1 a {
   font-weight: normal;
   line-height: 1;
   margin: 0 20px;
-  padding-left: 2em;
+  padding-left: 10em;
 }
 .filter-options select {
   background-color: white;
@@ -129,6 +129,9 @@ nav h1 a {
   margin: 10px;
   padding: 0 10px;
   width: 200px;
+}
+.filter-group label{
+  color: #fff;
 }
 
 /* ====================== Restaurant Listing ====================== */
@@ -363,6 +366,17 @@ nav h1 a {
   }
   .filter-options {
     height: unset;
+    padding: 5px 0;
+  }
+  .filter-group {
+    position: relative;
+  }
+  .filter-group label {
+    position: absolute;
+    margin-left: 10px;
+  }
+  .filter-options select {
+    margin: 20px 10px 4px;
   }
   .inside #footer {
     position: relative;
@@ -370,16 +384,29 @@ nav h1 a {
   }
 }
 
+@media screen and (min-width: 641px) and (max-width: 767px) {
+  .filter-options {
+    padding: 5px 0;
+  }
+}
+
 @media screen and (max-width: 640px) {
+  .filter-options {
+    padding: 10px 0;
+  }
+  .filter-group {
+    display: flex;
+    width: 100%;
+  }
   .filter-options h2 {
+    width: 100%;
     padding-top: 10px;
     padding-left: unset;
+    margin: 0 20px 10px 10px;
   }
-
   .filter-options select {
     width: 100%;
   }
-
   .inside #map-container {
     height: 400px;
   }
