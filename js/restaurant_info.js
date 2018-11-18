@@ -87,15 +87,18 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
   const image = document.getElementById('restaurant-img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  image.alt = restaurant.name;
+  image.alt = "";
+  image.setAttribute('aria-label', `Image of restaurant ${restaurant.name}`);
+  image.tabIndex = 0;
 
   const cuisine = document.getElementById('restaurant-cuisine');
   cuisine.innerHTML = restaurant.cuisine_type;
-  cuisine.ariaLabel = `cuisine_type: ${restaurant.cuisine_type}`;
+  cuisine.setAttribute('aria-label', `Cuisine type is ${restaurant.cuisine_type}`);
   cuisine.tabIndex = 0;
 
   const address = document.getElementById('restaurant-address');
   address.innerHTML = restaurant.address;
+  address.setAttribute('aria-label', `The address is ${restaurant.address}`);
   address.tabIndex = 0;
 
   // fill operating hours
@@ -111,16 +114,18 @@ fillRestaurantHTML = (restaurant = self.restaurant) => {
  */
 fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => {
   const hours = document.getElementById('restaurant-hours');
+  hours.setAttribute('aria-label', 'Restaurant hours');
+  hours.tabIndex = 0;
   // Table header row
   const headerRow = document.createElement('tr');
   hours.appendChild(headerRow);
 
   const operatingDays = document.createElement('th');
-  operatingDays.innerHTML = "Day";
+  operatingDays.innerHTML = 'Day';
   headerRow.appendChild(operatingDays);
 
   const timings = document.createElement('th');
-  timings.innerHTML = "Operating Hours";
+  timings.innerHTML = 'Operating Hours';
   headerRow.appendChild(timings);
 
   for (let key in operatingHours) {
@@ -143,6 +148,8 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
+  container.setAttribute('aria-label', `Reviews of ${restaurant.name}`); // ARIA-label for reviews section
+  container.tabIndex = 0;
   const title = document.createElement('h3');
   title.innerHTML = 'Reviews';
   container.appendChild(title);
