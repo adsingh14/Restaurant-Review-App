@@ -148,7 +148,7 @@ fillRestaurantHoursHTML = (operatingHours = self.restaurant.operating_hours) => 
  */
 fillReviewsHTML = (reviews = self.restaurant.reviews) => {
   const container = document.getElementById('reviews-container');
-  container.setAttribute('aria-label', `Reviews of ${restaurant.name}`); // ARIA-label for reviews section
+  container.setAttribute('aria-label', 'Reviews section'); // ARIA-label for reviews section
   container.tabIndex = 0;
   const title = document.createElement('h3');
   title.innerHTML = 'Reviews';
